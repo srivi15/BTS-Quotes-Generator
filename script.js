@@ -6,7 +6,7 @@ twitter = document.querySelector("twitter");
 
 let quotesData;
 
-fetch("bts_quotes.json")
+fetch("/data/bts_quotes.json")
     .then(response => response.json())
     .then(data => {
         //console.log(data);
