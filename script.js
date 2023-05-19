@@ -1,10 +1,11 @@
 const btsQuote = document.querySelector(".quote"),
 sourceName = document.querySelector(".source .name"),
 newQuote = document.querySelector("button"),
-copybutton = document.querySelector("copy"),
-twitter = document.querySelector("twitter");
+copybutton = document.querySelector(".copy"),
+twitter = document.querySelector(".twitter");
 
 let quotesData;
+let index;
 
 fetch("/data/bts_quotes.json")
     .then(response => response.json())
@@ -17,7 +18,7 @@ fetch("/data/bts_quotes.json")
 
 function randomBTSQuote(){
     if(quotesData){
-        const index = Math.floor(Math.random() * quotesData.length);
+        index = Math.floor(Math.random() * quotesData.length);
         const randomQuote = quotesData[index].Quotes;
         const rqSource = quotesData[index].Source;
         btsQuote.textContent = randomQuote;
